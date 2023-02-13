@@ -1,2 +1,3 @@
 # Python
-Python codes
+
+This repository contains python related code.
