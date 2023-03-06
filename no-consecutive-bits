@@ -1,0 +1,15 @@
+# No three consecutive bits of integer
+
+def noConseBits(n : int) -> int:
+        # code here
+        a = bin(n)
+        i = 2
+        b = a
+        while i <= len(a):
+            if a[i:i+3] == '111':
+                b = a[:i+2] + '0' + a[i+3:]
+                a = b
+            i += 1
+        return int(a, 2)
+print(noConseBits(7)) # output 6
+print(noConseBits(2)) # output 2
