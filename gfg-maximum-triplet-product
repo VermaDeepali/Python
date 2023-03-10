@@ -1,0 +1,14 @@
+# GFG POTD
+# Given an array arr of size n, the task is to find the maximum triplet product in the array.
+
+def maxTripletProduct (arr,  n): 
+        sortedArr = sorted(arr)
+        min1 = sortedArr[0]
+        min2 = sortedArr[1]
+        max1 = sortedArr[n-1]
+        max2 = sortedArr[n-2]
+        max3 = sortedArr[n-3]
+        return max(min1*min2*max1, max1*max2*max3)
+        
+ print(maxTripletProduct([-3, -5, 1, 0, 8, 3, -2], 7))  // 120
+ print(maxTripletProduct([1,2,3,5], 4)) // 30
