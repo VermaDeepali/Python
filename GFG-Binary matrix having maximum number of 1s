@@ -1,0 +1,19 @@
+def findMaxRow(mat, N):
+        row = 0
+        ans = 0
+        for i in range(N):
+            count = 0
+            for j in mat[i]:
+                if j == 1:
+                    count += 1
+            if ans < count:
+                ans = count
+                row = i
+        return [row,ans]
+N = 3
+mat = [[1,1, 1],
+[1,1,1],
+[0,0,0]]
+print(findMaxRow(mat,N)) 
+
+# output --> [0,3]
