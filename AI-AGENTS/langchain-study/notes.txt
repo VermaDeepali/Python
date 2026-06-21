@@ -1,0 +1,8 @@
+Recommended free/cheap models on OpenRouter
+
+You can swap models with:
+
+google/gemini-flash-1.5
+meta-llama/llama-3.3-70b-instruct
+anthropic/claude-3-haiku
+openai/gpt-4o-mini

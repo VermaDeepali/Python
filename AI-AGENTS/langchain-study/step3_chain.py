@@ -3,31 +3,28 @@ from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 
-# Load environment variables from .env file
 load_dotenv()
 
-# Create LLM instance using OpenRouter
+# LLM
 llm = ChatOpenAI(
     model="openai/gpt-4o-mini",
     api_key=os.getenv("OPENROUTER_API_KEY"),
     base_url=os.getenv("OPENROUTER_BASE_URL")
 )
 
-# Create reusable prompt template
+# Prompt template
 prompt = ChatPromptTemplate.from_template(
     "Explain {topic} in simple words"
 )
 
-# Fill placeholder with value
-formatted_prompt = prompt.invoke({
-    "topic": "Vector Databases"
+# Chain prompt -> llm
+chain = prompt | llm
+
+# Invoke chain
+response = chain.invoke({
+    "topic": "AWS Lambda"
 })
 
-# Send prompt to LLM
-response = llm.invoke(formatted_prompt)
-
-# Print response
 print(response.content)
 
-
-# cmd to run --> python step2_prompt_template.py
+# cmd to run --> python step3_chain.py
